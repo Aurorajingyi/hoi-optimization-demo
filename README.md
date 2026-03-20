@@ -20,14 +20,14 @@ The pipeline performs stage-wise refinement on interaction sequences and focuses
 Representative keyframes from another interaction sequence.  
 Left: raw initialization. Right: optimized result.
 
-![flip milk before after comparison](assets\comparisons\demo1_flip_milk_keyframes_before_after.png)
+![flip milk before after comparison](assets/comparisons/demo1_flip_milk_keyframes_before_after.png)
 
-Demo 2: Cola Pour
+## Demo 2: Cola Pour
 
-Representative keyframes from the same sequence.
+Representative keyframes from the same sequence.  
 Left: raw initialization. Right: optimized result.
 
-![cola pour before after comparison](assets\comparisons\demo2_cola_pour_keyframes_before_after.png)
+![cola pour before after comparison](assets/comparisons/demo2_cola_pour_keyframes_before_after.png)
 
 ### Qualitative improvements
 
@@ -40,11 +40,11 @@ Left: raw initialization. Right: optimized result.
 
 ### Demo 1: Flip Milk
 
-[Side-by-side comparison video](assets/videos/demo2_side_by_side.mp4)
+[![Flip Milk Video](assets/comparisons/demo1_flip_milk_keyframes_before_after.png)](assets/videos/demo1_side_by_side.mp4)
 
 ### Demo 2: Cola Pour
 
-[Side-by-side comparison video](assets/videos/demo1_side_by_side.mp4)
+[![Cola_Pour_Video](assets/comparisons/demo2_cola_pour_keyframes_before_after.png)](assets/videos/demo2_side_by_side.mp4)
 
 ## Method Highlights
 
@@ -52,8 +52,7 @@ Left: raw initialization. Right: optimized result.
 - stage-wise optimization
 - hand-part-based optimization control
 - object-aware geometric losses
-
-structured outputs for reproducibility and qualitative comparison
+- structured outputs for reproducibility and qualitative comparison
 
 ### Project Context
 
