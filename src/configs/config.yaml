@@ -1,0 +1,99 @@
+# 全局 optimization：Stage1 和 Stage2 都会继承这些配置，除非被各自 stage 覆盖
+optimization:
+  device: "cuda:0"
+  iterations: 200
+
+log:
+  step_interval: 20
+
+input:
+  obj_mesh_path: "data/parameters/canonical_obj-linycs.ply"
+  obj_6dof_path: "data/parameters/obj_6dof-linycs.npy"
+  # mano_param_seq_dir: "outputs/stage1/20251120s-104428/results"
+  mano_param_seq_dir: "data/parameters"
+  mano_seg_path: "assets/mano_supplement/mano_segmentation.json"
+
+output:
+  root: "outputs"
+  structure:
+    sub_dirs:
+      - log
+      - backup
+      - vis:
+        - initial
+        - optimized
+      - results
+    concrete_dir: {}
+  backup:
+    - "code"
+
+# Stage1：
+stage1:
+  optimizer: "adam"
+  learning_rate: 0.005
+  iterations: 100
+
+  parameters:
+    mano_pose: true
+    mano_rotation: false
+    mano_translation: false
+  
+  using_mano_parts:
+    optimize_parts:
+      - palm
+      - hand_back
+
+      - index_inner_indices
+      - middle_inner_indices
+      - ring_inner_indices
+      - little_inner_indices
+
+      - index_outer_indices
+      - middle_outer_indices
+      - ring_outer_indices
+      - little_outer_indices
+    ignore_parts:
+      - thumb_inner_indices
+      - thumb_outer_indices
+
+  objectives:
+    penetration: 0.0
+    contact: 0.0
+    regularization: 0.0
+    smooth: 0.0
+    thumb_open: 1.0
+
+# Stage2：
+stage2:
+  optimizer: "adam"
+  learning_rate: 0.001
+  iterations: 200
+
+  parameters:
+    mano_pose: true
+    mano_rotation: false
+    mano_translation: false
+  
+  using_mano_parts:
+    optimize_parts:
+      - thumb_inner_indices
+      - thumb_outer_indices
+    ignore_parts:
+      - palm
+      - hand_back
+
+      - index_inner_indices
+      - middle_inner_indices
+      - ring_inner_indices
+      - little_inner_indices
+
+      - index_outer_indices
+      - middle_outer_indices
+      - ring_outer_indices
+      - little_outer_indices
+
+  objectives:
+    penetration: 1.0
+    contact: 0.5
+    regularization: 0.0
+    smooth: 1
