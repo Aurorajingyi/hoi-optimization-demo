@@ -22,7 +22,7 @@ Left: raw initialization. Right: optimized result.
 
 ![flip milk before after comparison](assets/comparisons/demo1_flip_milk_keyframes_before_after.png)
 
-## Demo 2: Cola Pour
+## Demo 2: Pour Cola 
 
 Representative keyframes from the same sequence.  
 Left: raw initialization. Right: optimized result.
@@ -42,7 +42,7 @@ Left: raw initialization. Right: optimized result.
 
 [![Flip Milk Video](assets/comparisons/demo1_flip_milk_keyframes_before_after.png)](assets/videos/demo1_side_by_side.mp4)
 
-### Demo 2: Cola Pour
+### Demo 2: Pour Cola 
 
 [![Cola_Pour_Video](assets/comparisons/demo2_cola_pour_keyframes_before_after.png)](assets/videos/demo2_side_by_side.mp4)
 
